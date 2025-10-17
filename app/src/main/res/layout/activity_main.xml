@@ -28,7 +28,7 @@
 
             <TextView
                 android:id="@+id/textViewResult"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"
                 android:layout_marginTop="12dp"
@@ -37,7 +37,7 @@
                 android:maxLines="1"
                 android:textColor="@color/black"
                 android:textSize="64sp"
-                tools:text="llllllliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiillllll" />
+                tools:text="0" />
         </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -47,8 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:paddingHorizontal="4dp"
         android:orientation="vertical"
+        android:paddingHorizontal="4dp"
         android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,23 +64,23 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSquareRoot"
                 style="@style/Button.Style.Extra.Functions"
-                android:text="√" />
+                android:text="@string/square_root" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPiNumber"
                 style="@style/Button.Style.Extra.Functions"
-                android:text="π"
+                android:text="@string/pi_number"
                 android:textAllCaps="false" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDegree"
+                android:id="@+id/btnExponent"
                 style="@style/Button.Style.Extra.Functions"
-                android:text="^" />
+                android:text="@string/exponent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFactorial"
                 style="@style/Button.Style.Extra.Functions"
-                android:text="!" />
+                android:text="@string/factorial" />
 
         </LinearLayout>
 
@@ -94,22 +94,22 @@
                 style="@style/Button.Style"
                 android:backgroundTint="@color/light_pink"
                 android:lines="1"
-                android:text="AC" />
+                android:text="@string/all_clear" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBrackets"
                 style="@style/Button.Style.Blue"
-                android:text="( )" />
+                android:text="@string/brackets" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPercent"
                 style="@style/Button.Style.Blue"
-                android:text="%" />
+                android:text="@string/percentage" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDivide"
                 style="@style/Button.Style.Blue"
-                android:text="÷" />
+                android:text="@string/division" />
 
         </LinearLayout>
 
@@ -121,22 +121,22 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumSeven"
                 style="@style/Button.Style.Light.Gray"
-                android:text="7" />
+                android:text="@string/seven" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumEight"
                 style="@style/Button.Style.Light.Gray"
-                android:text="8" />
+                android:text="@string/eight" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumNine"
                 style="@style/Button.Style.Light.Gray"
-                android:text="9" />
+                android:text="@string/nine" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnMultiply"
                 style="@style/Button.Style.Blue"
-                android:text="×" />
+                android:text="@string/multiplication" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,22 +147,22 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumFour"
                 style="@style/Button.Style.Light.Gray"
-                android:text="4" />
+                android:text="@string/four" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumFive"
                 style="@style/Button.Style.Light.Gray"
-                android:text="5" />
+                android:text="@string/five" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumSix"
                 style="@style/Button.Style.Light.Gray"
-                android:text="6" />
+                android:text="@string/six" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnMinus"
                 style="@style/Button.Style.Blue"
-                android:text="—" />
+                android:text="@string/minus" />
         </LinearLayout>
 
         <LinearLayout
@@ -173,22 +173,22 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumOne"
                 style="@style/Button.Style.Light.Gray"
-                android:text="1" />
+                android:text="@string/one" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumTwo"
                 style="@style/Button.Style.Light.Gray"
-                android:text="2" />
+                android:text="@string/two" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumThree"
                 style="@style/Button.Style.Light.Gray"
-                android:text="3" />
+                android:text="@string/three" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPlus"
                 style="@style/Button.Style.Blue"
-                android:text="+" />
+                android:text="@string/plus" />
         </LinearLayout>
 
         <LinearLayout
@@ -199,22 +199,22 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumZero"
                 style="@style/Button.Style.Light.Gray"
-                android:text="0" />
+                android:text="@string/zero" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumDot"
                 style="@style/Button.Style.Light.Gray"
-                android:text="•" />
+                android:text="@string/dot" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnNumDelete"
                 style="@style/Button.Style.Light.Gray"
-                android:text="⌫" />
+                android:text="@string/delete" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEquality"
                 style="@style/Button.Style"
-                android:text="="
+                android:text="@string/equality"
                 app:backgroundTint="#cfe4ff" />
         </LinearLayout>
     </LinearLayout>
