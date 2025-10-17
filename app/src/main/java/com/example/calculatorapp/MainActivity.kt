@@ -2,6 +2,7 @@ package com.example.calculatorapp
 
 import android.os.Bundle
 import android.widget.HorizontalScrollView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.calculatorapp.databinding.ActivityMainBinding
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private var openBrackets = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
         setupButtons()
         binding.textViewResult.text = "0"
@@ -125,7 +127,8 @@ class MainActivity : AppCompatActivity() {
                     val finalExpr = expression + ")".repeat(openBrackets)
                     //вызывает Calculator.calculateInfixWithTwoStacks для вычисления результата
                     val result = Calculator.calculateInfixWithTwoStacks(finalExpr)
-                    expression = //если результат — целое число, преобразует его в строку без дробной части.
+                    expression =
+                            //если результат — целое число, преобразует его в строку без дробной части.
                         if (result % 1 == 0.0) result.toLong().toString() else result.toString()
                             .trimEnd('0').trimEnd('.')
                     binding.textViewResult.text = expression
