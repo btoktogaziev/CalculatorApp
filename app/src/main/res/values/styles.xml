@@ -2,20 +2,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Button.Style" parent="Widget.MaterialComponents.Button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="cornerRadius">400dp</item>
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="cornerRadius">45dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:padding">24dp</item>
-        <item name="android:layout_marginVertical" tools:targetApi="26">4dp</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="26">2dp</item>
+        <item name="android:layout_marginVertical" tools:targetApi="26">2dp</item>
+        <item name="android:textSize">32sp</item>
         <item name="android:textColor">@color/dark_gray</item>
         <item name="android:clickable">true</item>
         <item name="android:letterSpacing">-0.025</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginHorizontal" tools:targetApi="26">4dp</item>
     </style>
 
     <style name="Button.Style.Blue" parent="Button.Style">
@@ -27,9 +29,10 @@
     </style>
 
     <style name="Button.Style.Extra.Functions" parent="Button.Style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:textSize">28sp</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:layout_marginHorizontal" tools:targetApi="26">8dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:padding">0dp</item>
     </style>
 </resources>
