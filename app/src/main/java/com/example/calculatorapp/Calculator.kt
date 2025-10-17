@@ -20,7 +20,7 @@ object Calculator {
     )
 
     //унарные операторы, которые работают только с одним операндом
-    private val unaryOperators = setOf("!", "sqrt", "%")
+    private val unaryOperators = setOf("!", "sqrt", "%", "-u")
 
     //основной метод, принимающий обычное инфиксное выражение и возвращает результат в Double
     fun calculateInfixWithTwoStacks(input: String): Double {
