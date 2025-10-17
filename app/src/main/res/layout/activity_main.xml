@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/display"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/background_upper_layout"
@@ -15,24 +16,15 @@
         app:layout_constraintBottom_toTopOf="@id/container"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:backgroundTint="@android:color/transparent"
-            android:clickable="true"
-            android:src="@drawable/ic_menu"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <HorizontalScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/menu">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textViewResult"
@@ -44,11 +36,7 @@
                 android:gravity="end"
                 android:maxLines="1"
                 android:textColor="@color/black"
-                android:textSize="40sp"
-                app:layout_constraintBottom_toTopOf="@id/container"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/menu"
+                android:textSize="64sp"
                 tools:text="llllllliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiillllll" />
         </HorizontalScrollView>
 
@@ -57,18 +45,20 @@
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingHorizontal="4dp"
         android:orientation="vertical"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewResult">
+        app:layout_constraintTop_toBottomOf="@id/display">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -92,24 +82,11 @@
                 style="@style/Button.Style.Extra.Functions"
                 android:text="!" />
 
-            <ImageButton
-                android:id="@+id/btnMore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="12dp"
-                android:background="@drawable/bg_btn_extension"
-                android:clickable="true"
-                android:src="@drawable/ic_arrow_up"
-                android:text="^"
-                app:backgroundTint="@color/light_gray" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -139,7 +116,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -166,7 +142,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -193,7 +168,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -220,7 +194,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
