@@ -74,7 +74,7 @@ object Calculator {
                 // если остальные оператора(бинарные), то
                 else -> {
                     // пока на вершине есть оператор с приоритетом больше или равным текущему, выполняются операции из стэка
-                    while (operators.isNotEmpty() && operatorPriority[operators.peek()]!! >= operatorPriority[symbol]!!) {
+                    while (operators.isNotEmpty() && operatorPriority.containsKey(operators.peek()) && operatorPriority[operators.peek()]!! >= operatorPriority[symbol]!!) {
                         applyOperations(operators.pop(), values)
                     }
                     // после текущий оператор добавляется в стэк
