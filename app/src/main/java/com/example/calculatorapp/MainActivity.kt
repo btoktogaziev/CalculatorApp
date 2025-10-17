@@ -60,20 +60,32 @@ class MainActivity : AppCompatActivity() {
 
     //метод обрабатывает ввод в зависимости от нажатой кнопки
     private fun handleInput(value: String) {
+        val basicInputValues = listOf(
+            getString(R.string.dot),
+            getString(R.string.plus),
+            getString(R.string.minus),
+            getString(R.string.multiplication),
+            getString(R.string.division),
+            getString(R.string.exponent),
+            getString(R.string.percentage),
+            getString(R.string.factorial),
+            getString(R.string.pi_number)
+        )
         when (value) {
-            in "0".."9", ".", "+", "-", "×", "÷", "^", "%", "!", "π" -> {
+            in getString(R.string.zero)..getString(R.string.nine), in basicInputValues -> {
                 //проверяется, можно ли добавить точку метод(canAddDot), чтобы избежать двух точек в одном числе
-                if (value == "." && !canAddDot()) return //возвращает в начало функции и не даёт второй раз нажать кнопку
+                if (value == getString(R.string.dot) && !canAddDot()) return //возвращает в начало функции и не даёт второй раз нажать кнопку
                 //если перед Pi стоит цифра или ), добавляется умножение , чтобы избежать неявных ошибок.
-                if (value == "π" && expression.isNotEmpty() && expression.last()
+                if (value == getString(R.string.pi_number) && expression.isNotEmpty() && expression.last()
                         .isDigitOrClosingBracket()
                 ) {
-                    expression += "×"
+                    expression += R.string.multiplication
                 }
                 expression += value
             }
+
             //если перед √ стоит цифра или ), добавляется умножение.
-            "√" -> {
+            getString(R.string.square_root) -> {
                 if (expression.isNotEmpty() && expression.last().isDigitOrClosingBracket())
                     expression += "×"
                 expression += "√("
@@ -81,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                 openBrackets++
             }
 
-            "()" -> {
+            getString(R.string.brackets) -> {
                 //если shouldAddOpeningBracket возвращает true
                 if (shouldAddOpeningBracket()) {
                     //добавляет (
@@ -96,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            "delete" -> {
+            getString(R.string.delete) -> {
                 //если удаляется √(
                 if (expression.endsWith("√(")) {
                     // удаляются оба символа
@@ -113,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            "clear" -> {
+            getString(R.string.all_clear) -> {
                 //cбрасывает expression и openBrackets, устанавливает textViewResult в "0".
                 expression = ""
                 openBrackets = 0
@@ -121,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                 return
             }
 
-            "=" -> {
+            getString(R.string.equality) -> {
                 try {
                     //добавляет закрывающие скобки для всех ).
                     val finalExpr = expression + ")".repeat(openBrackets)
@@ -135,7 +147,7 @@ class MainActivity : AppCompatActivity() {
                     openBrackets = 0
                 } catch (e: Exception) {
                     //если возникает ошибка, отображается текст ошибки.
-                    binding.textViewResult.text = e.toString()
+                    binding.textViewResult.text = e.message
                     expression = ""
                     openBrackets = 0
                 }
@@ -158,12 +170,12 @@ class MainActivity : AppCompatActivity() {
     //определяет, нужно ли добавить (
     private fun shouldAddOpeningBracket(): Boolean {
         return expression.isEmpty()
-                || expression.last() in "+-×÷^("
+                || expression.last() in "+-${getString(R.string.multiplication)}${getString(R.string.division)}^("
                 || expression.endsWith("√(")
     }
 
     // проверяет, является ли символ цифрой или закрывающей скобкой.
     private fun Char.isDigitOrClosingBracket(): Boolean {
-        return isDigit() || this == ')'
+        return isDigit()
     }
 }
