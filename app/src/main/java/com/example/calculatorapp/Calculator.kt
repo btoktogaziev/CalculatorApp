@@ -39,7 +39,15 @@ object Calculator {
         for (symbol in symbols) {
             when {
                 //если число, добавление в стэк чисел
-                symbol.toDoubleOrNull() != null -> values.push(symbol.toDouble())
+                symbol.toDoubleOrNull() != null -> {
+                    val num = symbol.toDouble()
+                    if (operators.isNotEmpty() && operators.peek() == "-u") {
+                        operators.pop()
+                        values.push(-num)
+                    } else {
+                        values.push(num)
+                    }
+                }
                 //если унарный минус(минус перед отрицательным числом), то добавление в стэк операторов
                 symbol == "-u" -> operators.push(symbol)
                 //если (, то добавление в стэк операторов
