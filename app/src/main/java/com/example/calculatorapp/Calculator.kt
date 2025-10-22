@@ -1,10 +1,10 @@
-package com.example.calculatorapp
+package com.example.calculatorcomposeapp.domain
 
 import java.util.*
 import kotlin.math.*
 
 object Calculator {
-
+    //https://github.com/btoktogaziev/CalculatorApp/blob/error-fixing/app/src/main/java/com/example/calculatorapp/Calculator.kt
     //задаёт приоритеты операций
     private val operatorPriority = mapOf(
         "+" to 1,
@@ -125,23 +125,27 @@ object Calculator {
                 }
                 // если символ один из этих операторов, то
                 '+', '-', '*', '/', '^', '!', '%', '(', ')' -> {
+                    val listForCheck = listOf(
+                        "(",
+                        "+",
+                        "-",
+                        "*",
+                        "/",
+                        "^"
+                    )
                     // проверяется не является ли минус унарным, в начале выражения или другого оператора
-                    if (c == '-' && (chars.isEmpty() || chars.last() in listOf(
-                            "(",
-                            "+",
-                            "-",
-                            "*",
-                            "/",
-                            "^"
-                        ))
+                    if (c == '-' && (chars.isEmpty() || chars.last() in listForCheck)
                     ) {
                         // добавляется символ унарного оператора
                         chars.add("-u")
+                        i++
+                    } else if (c == '+' && (chars.isEmpty() || chars.last() in listForCheck)) {
+                        i++
                     } else {
                         // добавляется сам оператор
                         chars.add(c.toString())
+                        i++
                     }
-                    i++
                 }
                 // неизвестные символы
                 else -> throw IllegalArgumentException("Unknown symbol: $c")
