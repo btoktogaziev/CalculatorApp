@@ -1,4 +1,4 @@
-package com.example.calculatorcomposeapp.domain
+package com.example.calculatorapp
 
 import java.util.*
 import kotlin.math.*
